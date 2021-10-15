@@ -1,9 +1,9 @@
 const { Router } = require('express');
 const Todo = require('../models/Todo');
-const Category = require('../models/Category');
+//const Category = require('../models/Category');
 const router = Router();
 
-router.post('/notes', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const todo = await new Todo(req.body).save();
         res.status(201).json({ todo });
@@ -12,7 +12,7 @@ router.post('/notes', async (req, res) => {
     }
 });
 
-router.get('/notes', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const todos = await Todo.find();
         res.json(todos);
@@ -21,17 +21,17 @@ router.get('/notes', async (req, res) => {
     }
 });
 
-router.get('/notes/:id', async (req, res) => {
-    console.log(id)
+router.get('/:id', async (req, res) => {
+    
     try {
-        const todo = await Todo.findById( req.params.id ).exec();
+        const todo = await Todo.findOne({_id: req.params.id} );
         res.json(todo);
     } catch (e) {
         res.status(500).json({ message: 'Something went wrong, try again' });
     }
 });
 
-router.patch('/notes/:id', async (req, res) => {
+router.patch('/:id', async (req, res) => {
     try {
         const todo = await Todo.findOneAndUpdate(
             { _id: req.params.id },
@@ -43,7 +43,7 @@ router.patch('/notes/:id', async (req, res) => {
     }
 });
 
-router.delete('/notes/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         console.log(req.params)
         const todo = await Todo.findByIdAndDelete(req.params.id);
@@ -53,10 +53,11 @@ router.delete('/notes/:id', async (req, res) => {
     }
 });
 
-router.get('/notes/stats', async (req, res) => {
+router.get('/stats', async (req, res) => {
     try {
-        const { todos } = await Todo.STATES("category");
+        const todos = await Todo.find( {category : "Idea"} );
         res.json(todos);
+       
     } catch (e) {
         res.status(500).json({ message: 'Something went wrong, try again' });
     }
