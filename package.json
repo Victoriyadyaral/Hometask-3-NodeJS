@@ -1,0 +1,31 @@
+{
+  "name": "hometask-3-nodejs",
+  "version": "1.0.0",
+  "description": "Hometask #3 | NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node index.js",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Victoriyadyaral/Hometask-3-NodeJS.git"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "author": "Victoriya Shcherbanych <dyaral696@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Victoriyadyaral/Hometask-3-NodeJS/issues"
+  },
+  "homepage": "https://github.com/Victoriyadyaral/Hometask-3-NodeJS#readme",
+  "dependencies": {
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}

@@ -1,0 +1,5 @@
+{
+    "serverPort": 5000,
+    "mongoUri": "mongodb+srv://victoriya:dyaral696@cluster0.yjglx.mongodb.net/myDatabase?retryWrites=true&w=majority",
+    "baseUrl": "http://localhost:5000" 
+}

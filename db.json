@@ -1,0 +1,31 @@
+{
+"notes" : [
+    {
+        "id": "111",
+        "title": "Shopping list",
+        "created": "October 02, 2021",
+        "category": "Task",
+        "content": "Need to buy bread, grape and cake",
+        "isArchived": false,
+        "dates": []
+    },
+    {
+        "id": "222",
+        "title": "The theory of ...",
+        "created": "October 02, 2021",
+        "category": "Random Thought",
+        "content": "Want to read",
+        "isArchived": true,
+        "dates": []
+    },
+    {
+        "id": "333",
+        "title": "New feature",
+        "created": "October 03, 2021",
+        "category": "Idea",
+        "content": "Implement new feature to 05.10.2021",
+        "isArchived": false,
+        "dates": ["05.10.2021"]
+    }
+]
+}
