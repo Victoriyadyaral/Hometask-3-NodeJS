@@ -12,14 +12,14 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.get('/', async (req, res) => {
-    try {
-        const todos = await Todo.find();
-        res.json(todos);
-    } catch (e) {
-        res.status(500).json({ message: 'Something went wrong, try again' })
-    }
-});
+// router.get('/', async (req, res) => {
+//     try {
+//         const todos = await Todo.find();
+//         res.json(todos);
+//     } catch (e) {
+//         res.status(500).json({ message: 'Something went wrong, try again' })
+//     }
+// });
 
 router.get('/:id', async (req, res) => {
     
@@ -55,7 +55,7 @@ router.delete('/:id', async (req, res) => {
 
 router.get('/stats', async (req, res) => {
     try {
-        const todos = await Todo.find({category: "Task"});
+        const todos = await Todo.find();
         res.json(todos);
        
     } catch (e) {
@@ -64,4 +64,3 @@ router.get('/stats', async (req, res) => {
 });
 
 module.exports = router;
-

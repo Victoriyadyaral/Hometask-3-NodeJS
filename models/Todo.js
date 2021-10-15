@@ -5,7 +5,7 @@ const schema = new Schema({
     title: { type: String, required: true },
     created: { type: String, required: true },
     content: { type: String, required: true },
-    category: [{ type: String, ref: 'Category' }],
+    category: { type: String, ref: 'Category' },
     isArchived: { type: Boolean, default: false },
     dates: {type: Array, default: []}
 });
